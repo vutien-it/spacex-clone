@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX - Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header" style="background: rgba(0,0,0,0.9);">
+        <div class="logo">
+            <a href="index.html">
+                <svg viewBox="0 0 400 50" style="width: 210px; fill: #fff;"><path d="M37.5,30.5H10.9v-6.6h33.4c-0.4-1.3-1.1-2.4-2.1-3.3L37.5,30.5z M10.9,14.6h25.4c-1.5-2.2-4.1-3.6-7.1-3.6H10.9v6.6H10.9z M30.7,40.1H10.9v-6.6h16.2L30.7,40.1z"></path></svg>
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="falcon9.html">FALCON 9</a></li>
+                <li><a href="starship.html">STARSHIP</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-section">
+        <h2 class="gallery-title">PHOTO GALLERY</h2>
+        
+        <div class="gallery-grid">
+            <!-- Một ô bình thường -->
+            <div class="gallery-item"><img src="https://sxcontent2.spacex.com/images/falcon-9/F9_1.webp" alt="SpaceX"></div>
+            <!-- Một ô rộng (span 2 cột) -->
+            <div class="gallery-item wide"><img src="https://sxcontent2.spacex.com/images/falcon-heavy/FH_1.webp" alt="SpaceX"></div>
+            <!-- Một ô cao (span 2 hàng) -->
+            <div class="gallery-item tall"><img src="https://sxcontent2.spacex.com/images/starship/full-stack/S_1.webp" alt="SpaceX"></div>
+            <div class="gallery-item"><img src="https://sxcontent2.spacex.com/images/dragon/DR_1.webp" alt="SpaceX"></div>
+            <!-- Một ô lớn (2x2) -->
+            <div class="gallery-item big"><img src="https://www.spacex.com/static/images/backgrounds/f9_feature.webp" alt="SpaceX"></div>
+            <div class="gallery-item"><img src="https://sxcontent2.spacex.com/images/falcon-9/F9_2.webp" alt="SpaceX"></div>
+            <div class="gallery-item wide"><img src="https://sxcontent2.spacex.com/images/falcon-heavy/FH_2.webp" alt="SpaceX"></div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <span>SPACEX © 2024</span>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">FLICKR</a>
+        </div>
+    </footer>
+</body>
+</html>
