@@ -219,3 +219,26 @@ nav ul li a:hover {
         right: 0;
     }
 }
+
+/* Phần thông số kỹ thuật (Stats Section) dùng cho các trang con */
+.stats-section {
+    padding: 100px 50px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.stats-inner {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding: 25px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
