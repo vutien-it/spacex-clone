@@ -36,7 +36,7 @@
 
         <nav>
             <ul class="menu">
-                <li><a href="#">FALCON 9</a></li>
+                <li><a href="falcon9.html">FALCON 9</a></li>
                 <li><a href="#">FALCON HEAVY</a></li>
                 <li><a href="#">DRAGON</a></li>
                 <li><a href="#">STARSHIP</a></li>
@@ -90,6 +90,28 @@
     <!-- Nạp file JavaScript của thư viện AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Khởi tạo AOS để các hiệu ứng data-aos hoạt động -->
-    <script>AOS.init();</script>
+    <script>
+        AOS.init();
+
+        // Chức năng tự động cập nhật dấu chấm (Side Dots) khi cuộn
+        const sections = document.querySelectorAll('section, footer');
+        const dots = document.querySelectorAll('.dot');
+
+        const observerOptions = {
+            threshold: 0.5 // Kích hoạt khi phần tử hiện diện 50% trên màn hình
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    const activeDot = document.querySelector(`.dot[href="#${entry.target.id}"]`);
+                    if (activeDot) activeDot.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>
