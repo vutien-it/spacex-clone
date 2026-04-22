@@ -1,27 +1,28 @@
+/* Thiết lập cơ bản cho tất cả các phần tử */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Barlow', sans-serif;
-    scroll-behavior: smooth;
+    margin: 0; /* Loại bỏ lề mặc định */
+    padding: 0; /* Loại bỏ khoảng đệm mặc định */
+    box-sizing: border-box; /* Tính toán kích thước bao gồm cả padding và border */
+    font-family: 'Barlow', sans-serif; /* Sử dụng font chữ Barlow */
+    scroll-behavior: smooth; /* Cuộn mượt khi nhấn vào các liên kết nội bộ (anchor links) */
 }
 
 body {
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
+    background-color: #000; /* Nền màu đen */
+    color: #fff; /* Chữ màu trắng */
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang */
 }
 
-/* Scroll Snapping */
+/* Cấu hình cuộn hít (Scroll Snapping) */
 .snap-container {
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Bắt buộc cuộn hít theo chiều dọc */
+    height: 100vh; /* Chiều cao bằng toàn bộ khung nhìn trình duyệt */
+    overflow-y: scroll; /* Cho phép cuộn dọc */
 }
 
-/* Navigation */
+/* Thanh menu chính (Header) */
 .main-header {
-    position: fixed;
+    position: fixed; /* Cố định menu ở đầu trang khi cuộn */
     top: 0;
     left: 0;
     width: 100%;
@@ -29,16 +30,17 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    z-index: 10;
-    backdrop-filter: blur(5px);
+    z-index: 10; /* Đảm bảo menu nằm trên cùng */
+    backdrop-filter: blur(5px); /* Làm mờ hậu cảnh phía sau menu */
     -webkit-backdrop-filter: blur(5px); /* Hỗ trợ trình duyệt Safari */
     background: rgba(0, 0, 0, 0.3); /* Fallback khi không hỗ trợ blur */
-    transition: background 0.5s ease;
+    transition: background 0.5s ease; /* Hiệu ứng chuyển đổi màu nền */
 }
 
+/* Kích thước logo */
 .logo svg {
     width: 210px;
-    fill: #fff;
+    fill: #fff; /* Màu tô cho logo SVG */
 }
 
 nav ul {
@@ -53,25 +55,26 @@ nav ul li a {
     font-weight: bold;
     font-size: 14px;
     margin-right: 20px;
-    transition: 0.3s;
+    transition: 0.3s; /* Hiệu ứng khi di chuột vào */
 }
 
 nav ul li a:hover {
-    opacity: 0.7;
+    opacity: 0.7; /* Làm mờ nhẹ khi hover */
 }
 
-/* Side Dots */
+/* Các dấu chấm điều hướng bên sườn */
 .side-dots {
-    position: fixed;
+    position: fixed; /* Luôn cố định một chỗ */
     right: 30px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
     display: flex;
     flex-direction: column;
     gap: 15px;
     z-index: 100;
 }
 
+/* Hình dáng của dấu chấm */
 .dot {
     width: 12px;
     height: 12px;
@@ -80,33 +83,36 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
+/* Trạng thái khi dấu chấm được chọn hoặc hover */
 .dot:hover, .dot.active {
     background-color: #fff;
 }
 
-/* Sections */
+/* Cấu hình chung cho các phần (Hero Sections) */
 .section-hero {
     position: relative;
-    height: 100vh;
-    scroll-snap-align: start; /* Hít vào đầu section */
+    height: 100vh; /* Mỗi phần chiếm hết 1 màn hình */
+    scroll-snap-align: start; /* Khi dừng cuộn, phần này sẽ hít vào đỉnh màn hình */
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end; /* Nội dung nằm dưới cùng bên trái */
     padding: 100px 50px;
-    overflow: hidden;
+    overflow: hidden; /* Cắt bỏ các phần thừa của video */
 }
 
+/* Video nền phủ kín phần hero */
 .video-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    object-fit: cover;
+    z-index: -1; /* Nằm dưới văn bản */
+    object-fit: cover; /* Video luôn phủ kín màn hình mà không bị méo */
 }
 
+/* Container chứa chữ */
 .content {
     max-width: 500px;
 }
@@ -123,7 +129,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* Button */
+/* Thiết kế nút bấm (Button) */
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -139,35 +145,38 @@ nav ul li a:hover {
     transition: 0.4s;
 }
 
+/* Hiệu ứng khi di chuột vào nút: Đổi màu nền sang trắng, chữ sang đen */
 .btn:hover {
     background: #fff;
     color: #000;
 }
 
-/* Mobile Menu / Hamburger */
+/* Ẩn các phần tử menu di động ở màn hình máy tính */
 .menu-btn, .menu-icon {
     display: none;
 }
 
+/* Giao diện cho máy tính bảng và điện thoại (dưới 992px) */
 @media (max-width: 992px) {
     .main-header {
         justify-content: space-between;
         padding: 20px;
     }
 
+    /* Chuyển menu thành một thanh trượt từ bên phải vào */
     nav {
         position: fixed;
         background-color: #000;
         top: 0;
-        right: -100%;
+        right: -100%; /* Ban đầu ẩn menu ngoài màn hình */
         width: 250px;
         height: 100%;
         padding-top: 80px;
-        transition: 0.5s;
+        transition: 0.5s; /* Hiệu ứng trượt mượt mà */
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Xếp các liên kết theo cột */
         margin-left: 0;
     }
 
@@ -176,12 +185,14 @@ nav ul li a:hover {
         border-bottom: 1px solid #222;
     }
 
+    /* Hiển thị nút Hamburger */
     .menu-icon {
         display: block;
         cursor: pointer;
         z-index: 20;
     }
 
+    /* Tạo hình 3 gạch bằng CSS */
     .navicon {
         background: #fff;
         display: block;
@@ -203,6 +214,7 @@ nav ul li a:hover {
     .navicon:before { top: 7px; }
     .navicon:after { top: -7px; }
 
+    /* Khi checkbox được tích (click vào icon), đẩy menu vào màn hình */
     .menu-btn:checked ~ nav {
         right: 0;
     }
