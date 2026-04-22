@@ -30,7 +30,9 @@ body {
     justify-content: flex-start;
     align-items: center;
     z-index: 10;
-    backdrop-filter: blur(5px); /* Hiệu ứng kính mờ */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Hỗ trợ trình duyệt Safari */
+    background: rgba(0, 0, 0, 0.3); /* Fallback khi không hỗ trợ blur */
     transition: background 0.5s ease;
 }
 
